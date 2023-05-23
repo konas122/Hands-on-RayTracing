@@ -175,3 +175,4 @@ dmypy.json
 *.exe.recipe
 *.xml
 *.iml
+.idea/
