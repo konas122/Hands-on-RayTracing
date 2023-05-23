@@ -173,3 +173,5 @@ dmypy.json
 *.pdb
 *.vcxproj.FileListAbsolute.txt
 *.exe.recipe
+*.xml
+*.iml
