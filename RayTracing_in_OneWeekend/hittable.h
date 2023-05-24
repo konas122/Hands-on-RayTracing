@@ -14,7 +14,7 @@ struct hit_record {
 
     shared_ptr<material> mat_ptr;
 
-    inline void set_face_nomal(const ray& r, const vec3& outward_nomal) {
+    inline void set_face_normal(const ray& r, const vec3& outward_nomal) {
         front_face = dot(r.direction(), outward_nomal) < 0;
         normal = front_face ? outward_nomal : -outward_nomal;
     }
