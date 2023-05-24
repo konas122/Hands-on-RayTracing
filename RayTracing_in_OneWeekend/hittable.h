@@ -7,8 +7,8 @@
 class material;
 
 struct hit_record {
-    vec3 p;
-    vec3 normal;
+    vec3 p;         // point coordinates
+    vec3 normal;    // normal vector
     double t;
     bool front_face;
 
