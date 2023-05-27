@@ -10,7 +10,7 @@ vec3 ray_color(const ray &, const hittable &, int);
 
 
 int main() {
-	const int image_height = 200;
+	const int image_height = 400;
 	const int image_width = 2 * image_height;
 	const int samples_per_pixel = 100;
 	const int max_depth = 50;
@@ -21,8 +21,8 @@ int main() {
 	outfile << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
 	// hittable_list world = random_scene(5);
-	hittable_list world = two_perlin_spheres();
-
+	// hittable_list world = two_perlin_spheres();
+	hittable_list world = earth();
 
 	const double fov = 20;
 	const auto aspect_ratio = double(image_width) / image_height;

@@ -4,6 +4,8 @@
 #include "hittable.h"
 #include "vec3.h"
 
+void get_sphere_uv(const vec3 &p, double &u, double &v);
+
 
 class sphere: public hittable {
     public:
@@ -36,6 +38,9 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
+
+            get_sphere_uv(outward_normal, rec.u, rec.v);
+
             rec.mat_ptr = mat_ptr;
             return true;
         }
@@ -45,6 +50,9 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
+
+            get_sphere_uv(outward_normal, rec.u, rec.v);
+
             rec.mat_ptr = mat_ptr; 
             return true;
         }
@@ -122,6 +130,7 @@ bool moving_sphere::hit(
             vec3 outward_normal = (rec.p - center(r.time())) / radius;
 
             rec.set_face_normal(r, outward_normal);
+
             rec.mat_ptr = mat_ptr;
             return true;
         }
@@ -139,6 +148,16 @@ bool moving_sphere::bounding_box(double t0, double t1, aabb& output_box) const {
         center(t1) + vec3(radius, radius, radius));
     output_box = surrounding_box(box0, box1);
     return true;
+}
+
+
+// change sphere coordinate phi and theta into image coordinate u and v
+void get_sphere_uv(const vec3& p, double& u, double& v) {
+    auto theta = acos(-p.y());
+    auto phi = atan2(-p.z(), p.x()) + pi;
+
+    u = phi / (2 * pi);
+    v = theta / pi;
 }
 
 #endif

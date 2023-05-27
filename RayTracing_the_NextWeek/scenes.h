@@ -1,6 +1,9 @@
 #ifndef SCENES_H
 #define SCENES_H
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 #include "bvh.h"
 #include "sphere.h"
 #include "material.h"
@@ -105,6 +108,22 @@ hittable_list two_perlin_spheres() {
         )
     );
     return world;
+}
+
+
+hittable_list earth() {
+    int nx, ny, nn;
+    unsigned char* texture_data = stbi_load("earthmap.jpg", &nx, &ny, &nn, 0);
+
+	auto earth_surface =
+		make_shared<lambertian>(
+			make_shared<image_texture>(texture_data, nx, ny)
+		);
+	auto globe = make_shared<sphere>(
+		vec3(0, 0, 0), 2, earth_surface
+	);
+
+	return hittable_list(globe);
 }
 
 #endif
