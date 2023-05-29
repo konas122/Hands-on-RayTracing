@@ -11,10 +11,10 @@ vec3 ray_color(const ray &r, const vec3 &background, const hittable &world, int 
 
 
 int main() {
-	const int image_height = 300;
-	const int image_width = 2 * image_height;
+	const int image_height = 100;
+	const int image_width = 1 * image_height; // or 1 * image_height
 	const int samples_per_pixel = 100;
-	const int max_depth = 50;
+	const int max_depth = 200;
 
 	std::ofstream outfile;
 	outfile.open("Test.ppm");
@@ -24,17 +24,29 @@ int main() {
 	// hittable_list world = random_scene(5);
 	// hittable_list world = two_perlin_spheres();
 	// hittable_list world = earth();
-	hittable_list world = simple_light();
+	// hittable_list world = simple_light();
+	// hittable_list world = cornell_box_0();
+	hittable_list world = cornell_box();
 
-	const double fov = 20;
+	const double fov = 30;
 	const auto aspect_ratio = double(image_width) / image_height;
-	vec3 lookfrom(13, 2, 3);
-	vec3 lookat(0, 0, 0);
+
+	/* used for every render task except conrell box */
+	// vec3 lookfrom(13, 2, 3);
+	// vec3 lookat(0, 0, 0);
+	// vec3 vup(0, 1, 0);
+	// auto dist_to_focus = 10.0;
+	// auto aperture = 0.1;
+
+	/* used for rendering cornell box */
+	vec3 lookfrom(278, 278, -800);
+	vec3 lookat(278, 278, 0);
 	vec3 vup(0, 1, 0);
 	auto dist_to_focus = 10.0;
-	auto aperture = 0.1;
+	auto aperture = 0.0;
+	auto vfov = 40.0;
 
-	// camera cam
+	// camera 
 	camera cam(lookfrom, lookat, vup, fov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
 
 	const vec3 background(0, 0, 0);
