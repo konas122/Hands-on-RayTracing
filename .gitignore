@@ -177,3 +177,4 @@ dmypy.json
 *.iml
 .idea/
 .vscode/
+*.s
