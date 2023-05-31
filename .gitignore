@@ -178,3 +178,6 @@ dmypy.json
 .idea/
 .vscode/
 *.s
+
+TheNextWeek/*.ppm
+TheNextWeek/*.jpg
