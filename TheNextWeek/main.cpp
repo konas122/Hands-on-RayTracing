@@ -11,10 +11,10 @@ vec3 ray_color(const ray &r, const vec3 &background, const hittable &world, int 
 
 
 int main() {
-	const int image_height = 200;
+	const int image_height = 100;
 	const int image_width = 1 * image_height; // k * image_height, you can change k yourself
-	const int samples_per_pixel = 3000;
-	const int max_depth = 100;
+	const int samples_per_pixel = 300;
+	const int max_depth = 10;
 
 	std::ofstream outfile;
 	outfile.open("Test.ppm");
@@ -62,6 +62,7 @@ int main() {
 
 	const vec3 background(0, 0, 0);
 
+#pragma omp parallel for
 	for (int j = image_height - 1; j >= 0; --j) {
 		std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;
 		for (int i = 0; i < image_width; ++i) {
