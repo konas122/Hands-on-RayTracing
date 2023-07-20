@@ -11,9 +11,9 @@ vec3 ray_color(const ray &r, const vec3 &background, const hittable &world, int 
 
 
 int main() {
-	const int image_height = 100;
+	const int image_height = 540;
 	const int image_width = 1 * image_height; // k * image_height, you can change k yourself
-	const int samples_per_pixel = 300;
+	const int samples_per_pixel = 10000;
 	const int max_depth = 10;
 
 	std::ofstream outfile;
