@@ -20,3 +20,5 @@ Learning from [RayTracing/raytracing.github.io: Main Web Site (Online Books)](ht
 <img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/cornell_smoke.jpg?raw=true" style="zoom:33%;" />
 
 <img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/final_scene.jpg?raw=true" style="zoom:33%;" />
+
+<img src=".\Pics\NextWeek\final_scene.jpg" style="zoom: 67%;" />
