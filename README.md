@@ -13,14 +13,14 @@ There are two projects in this repo: **RayTracing In One Weekend** and **RayTrac
 
 ## RayTracing In One Weekend
 
-<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/OneWeekend/output.jpg?raw=true" style="zoom: 33%;" />
+<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/OneWeekend/output.jpg?raw=true" style="width:750px" />
 
 ## RayTracing In Next Week
 
-<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/chess_texture.jpg?raw=true" style="zoom: 33%;" />
+<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/chess_texture.jpg?raw=true" style="width:750px" />
 
-<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/simple_light.jpg?raw=true" style="zoom: 33%;" />
+<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/simple_light.jpg?raw=true" style="width:750px" />
 
-<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/cornell_smoke.jpg?raw=true" style="zoom:33%;" />
+<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/cornell_smoke.jpg?raw=true"/>
 
-<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/final_scene.jpg?raw=true" style="zoom:67%;" />
+<img src="https://github.com/konas122/Hands-on-RayTracing/blob/main/pics/NextWeek/final_scene.jpg?raw=true" />
